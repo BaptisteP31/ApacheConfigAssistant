@@ -63,7 +63,7 @@ VirtualHost_Create_Config() {
     echo "        DirectoryIndex $DIRECTORY_INDEX" >>$CONFIG_NAME
 
     echo "        <Directory "$DOCUMENT_ROOT">" >>$CONFIG_NAME
-    echo "                Option Indexes FollowSymLinks" >>$CONFIG_NAME
+    echo "                Options Indexes FollowSymLinks" >>$CONFIG_NAME
     echo "                AllowOverride All" >>$CONFIG_NAME
     echo "                Require all granted" >>$CONFIG_NAME
     echo "        </Directory>" >>$CONFIG_NAME
