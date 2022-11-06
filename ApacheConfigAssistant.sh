@@ -17,7 +17,7 @@ VH_config_deploy() {
     CONFIG_NAME=$(ls -l | grep ".*\.conf$" | head -n1 | awk '{print $9}') #Set the name to an existing config in the directory
     CONFIG_NAME=${CONFIG_NAME%.conf}
 
-    CONFIG_NAME=$(whiptail --inputbox "What name shall your config have (do not put extention)" 8 39 $CONFIG_NAME --title "Give a name to your config" 3>&1 1>&2 2>&3)
+    CONFIG_NAME=$(whiptail --inputbox "What's the name of your config (do not put extention)" 8 39 $CONFIG_NAME --title "Name to your config" 3>&1 1>&2 2>&3)
     
     CONFIG_NAME=$CONFIG_NAME.conf
 
@@ -63,7 +63,7 @@ VirtualHost_Create_Config() {
     echo "        DirectoryIndex $DIRECTORY_INDEX" >>$CONFIG_NAME
 
     echo "        <Directory "$DOCUMENT_ROOT">" >>$CONFIG_NAME
-    echo "                Option Indexes FollowSymLinks" >>$CONFIG_NAME
+    echo "                Options Indexes FollowSymLinks" >>$CONFIG_NAME
     echo "                AllowOverride All" >>$CONFIG_NAME
     echo "                Require all granted" >>$CONFIG_NAME
     echo "        </Directory>" >>$CONFIG_NAME
